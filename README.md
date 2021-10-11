@@ -5,7 +5,7 @@
 
 1. ***Deliverable 1***: The Number of Retiring Employees by Title
 2. ***Deliverable 2***: The Employees Eligible for the Mentorship Program
-3. ***Deliverable 3***: A written report on the employee database analysis [`README.md`](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis). 
+3. ***Deliverable 3***: A written report on the employee database analysis [`README.md`]
 
 ## Resources and Before Start Notes:
 
@@ -23,18 +23,14 @@ The departments.csv file has a dept_no column with unique identifiers for each r
 
 Primary keys are an important part of database design. When a database is being created, each table added must include a primary key in the architecture. Primary keys serve as a link between these tables.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s1.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/t1.PNG)
 
 
 In the graphic above, Table 1 has a primary key, or column of unique identifiers in common with Tables 2 and 4. Table 3's primary key is linked only to Table 2. These links trace the relationships between tables. There are times when we'll need to trace two or three links to get the exact data we need. In these cases, we'll pick the data we need from each table. Linking the tables together in this manner is called a join, a feature we'll get into later.
 
 In the second CSV file, `dept_emp.csv`, the "emp_no" column contains the primary key.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s2.PNG?raw=true)
-
 We know this is the primary key because each number is unique. For example, the emp_no column holds employee numbers. Each employee will have only one number, and that number won't be used for any other employee.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s3.PNG?raw=true)
 
 Open that file and take an initial look at the data.
 
@@ -47,68 +43,8 @@ When you save your friend's number in your phone, you're creating a reference to
 
 Likewise, when your friend saves your number in their phone, your number is now a foreign key in their phone. Saving these keys connects the devices. They show the relationship between your phone and your friend's phone.
 
-Compare our first two CSVs again by looking at the following image.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s4.PNG?raw=true)
-
-In this example, dept_no shows up in both datasets; as an identifier (or primary key) in one and as a reference (or foreign key) in the other. This demonstrates the link between employees and which department they work in.
 
 We could continue to look for connections between the datasets, or we could create a roadmap of the content. Our roadmap would serve as a quick reference diagramming the different datasets and their interconnections. Additionally, it could be used as a reference guide later, when we begin to create queries to access all of the data.
-
-## Table Structure
-When working in Excel and Visual Basic for Applications (VBA), we're working directly with worksheets with data. In SQL, the same worksheets we have been exploring are organized into tables instead. They are similar to DataFrames in that they have headers and indexes, with data in columns and rows. Take a look at the following images.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s5.PNG?raw=true)
-
-Next we'll cover how table structure comes into play when creating an entity relationship diagram.
-
-## Entity Relationship Diagrams (ERDs)
-An entity relationship diagram (ERD) is a type of flowchart that highlights different tables and their relationships to each other. The ERD does not include any actual data, but it does capture the following pertinent information from each CSV file:
-
-* Primary keys
-* Foreign keys
-* Data types for each column
-
-The ERD also shows the flow of information from one table to another, as captured in the image below:
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s6.PNG?raw=true)
-
-In addition to creating new databases, ERDs are used to document existing databases. The visual representation of the tables gives a deeper understanding of the data and the database as a whole.
-
-When creating a diagram, we need to fully understand all of the data being inserted. Database components include tables, known as **entities**, with data, known as **attributes**.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s7.PNG?raw=true)
-
-Data types include Booleans, integers, and varying characters (i.e., within a string).
-
-There are three types of ERDs: **conceptual, logical,** and **physical**. Each one builds upon the other—you need the conceptual ERD to build a logical ERD to build a physical ERD. We'll learn how to create ERDs later in this module.
-
-## IMPORTANT TO KNOW
-
-### Conceptual Diagrams
-A conceptual diagram is an ERD in its simplest form. To create one, we only need two things: a table name and column headers.
-
-It's simple because we're creating just the concept of the diagram. By covering only the basics, it's easier to capture the main points. If we tried to capture everything at once (data types, location of the primary and foreign keys, etc.), we're more likely to overlook a crucial item.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s10.PNG?raw=true)
-
-### Logical Diagrams
-Logical diagrams contain all of the same information that a conceptual diagram does, but the table is updated to include data types and primary keys.
-
-Returning to the Quick DBD webpage, let's update our schema. Because we already took an initial look at the worksheet, we have already identified the primary key and know what type of data we're working with. Using the following syntax, update our Departments schema:
-
-Add "varchar pk" to dept_no.
-Add "varchar" to dept_name.
-We use varchar (Links to an external site.) in these columns because the fields contain characters of varying length. Adding "pk" in the schema next to column indicates that column as a primary key. The table updated to reflect the changes in the text editor. A key symbol appears next to the dept_no line, indicating that it is the table's primary key, and varchar is added to indicate its type.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s9.PNG?raw=true)
-
-### Physical Diagrams
-Physical diagrams portray the physical relationship, or how the data is connected, between each table. There are several different relationships available to keep in mind when making these connections, as shown below:
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/s8.PNG?raw=true)
-
-
 
 ## Deliverable 1:  The Number of Retiring Employees by Title
 ### Deliverable Requirements:
@@ -147,7 +83,7 @@ WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 order by e.emp_no;
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/1.1.PNG?raw=true)
+![name-of-you-image](hhttps://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.1.PNG)
 
 2. **The Retirement Titles table is exported as `retirement_titles.csv`**
 
@@ -155,7 +91,7 @@ order by e.emp_no;
 
 **Code and Image**
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/1.1r.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.1r.PNG)
 
 3. ​***A query is written and executed to create a Unique Titles table that contains the employee number, first and last name, and most recent title.**
 
@@ -175,7 +111,7 @@ FROM retirement_titles
 ORDER BY emp_no, title DESC;
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/1.2.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.2.PNG)
 
 4. **The Unique Titles table is exported as `unique_titles.csv`**
 
@@ -183,7 +119,7 @@ ORDER BY emp_no, title DESC;
 
 **Code and Image**
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/1.2r.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.2r.PNG)
 
 5. **A query is written and executed to create a Retiring Titles table that contains the number of titles filled by employees who are retiring.**
 
@@ -202,7 +138,7 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/PyBer_Analysis/blob/main/Resources/Images/1.3.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.3.PNG)
 
 6. **The Retiring Titles table is exported as `retiring_titles.csv`**
 
@@ -210,7 +146,7 @@ ORDER BY COUNT(title) DESC;
 
 **Code and Image**
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/1.3r.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/1.3r.PNG)
 
 
 
@@ -250,7 +186,7 @@ WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no;
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/2.1.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/2.1.PNG)
 
 2. **The Mentorship Eligibility table is exported and saved as `mentorship_eligibilty.csv`"**
 
@@ -258,7 +194,7 @@ ORDER BY e.emp_no;
 
 **Code and Image**
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/2.1r.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/2.1r.PNG)
 
 
 
@@ -285,7 +221,7 @@ ORDER BY e.emp_no;
     
 **Image Below** 
     
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/3.2.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/3.2.PNG)
 
 
 3. **Summary** 
@@ -299,7 +235,7 @@ ORDER BY e.emp_no;
 
     No, we have 1,940 employees who are eligible to participate in a mentorship program. 
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis/blob/main/Resources/Images/3.3.2.PNG?raw=true)
+![name-of-you-image](https://github.com/skaram16/pewlett_hackard_analysis/blob/main/Resources/3.3.2.PNG)
     
     
 
